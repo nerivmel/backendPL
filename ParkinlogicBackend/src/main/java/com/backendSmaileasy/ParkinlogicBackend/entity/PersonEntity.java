@@ -14,17 +14,17 @@ public class PersonEntity {
     @Column
     private String email;
     @Column
-    private String docType;
+    private String doctype;
     @Column
     private String doc;
 
     public PersonEntity() {
     }
 
-    public PersonEntity(String name, String email, String docType, String doc) {
+    public PersonEntity(String name, String email, String doctype, String doc) {
         this.name = name;
         this.email = email;
-        this.docType = docType;
+        this.doctype = doctype;
         this.doc = doc;
     }
 
@@ -45,19 +45,19 @@ public class PersonEntity {
     }
 
     public String getEmail() {
-        return this.email;
+        return email;
     }
 
     public void setEmail(String email) {
         this.email = email;
     }
 
-    public String getDocType() {
-        return docType;
+    public String getDoctype() {
+        return doctype;
     }
 
-    public void setDocType(String doc_type) {
-        this.docType= docType;
+    public void setDoctype(String doctype) {
+        this.doctype = doctype;
     }
 
     public String getDoc() {
@@ -74,7 +74,7 @@ public class PersonEntity {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", email='" + email + '\'' +
-                ", doc_type='" + docType + '\'' +
+                ", doc_type='" + doctype + '\'' +
                 ", doc='" + doc + '\'' +
                 '}';
     }

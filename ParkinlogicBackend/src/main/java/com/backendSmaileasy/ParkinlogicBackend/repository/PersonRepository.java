@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface PersonRepository extends JpaRepository<PersonEntity,Long> {
-        PersonEntity findByDocAndDocType(String doc, String doc_type);
+        PersonEntity findByDocAndDoctype(String doc, String doctype);
     }
