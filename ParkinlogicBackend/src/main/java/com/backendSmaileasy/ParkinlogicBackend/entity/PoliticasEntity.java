@@ -19,7 +19,9 @@ public class PoliticasEntity {
     private Long id;
 
     @NotNull
-    private Long idFacility;
+    @ManyToOne
+    @JoinColumn(name = "id_facility")
+    private FacilityEntity facility;
 
     @NotNull
     private String label;
@@ -28,7 +30,6 @@ public class PoliticasEntity {
 
     @NotNull
     private boolean requerida;
-
 }
 
 

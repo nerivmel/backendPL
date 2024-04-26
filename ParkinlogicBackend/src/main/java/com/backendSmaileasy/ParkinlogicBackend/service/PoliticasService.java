@@ -1,5 +1,6 @@
 package com.backendSmaileasy.ParkinlogicBackend.service;
 
+import com.backendSmaileasy.ParkinlogicBackend.dto.PoliticasDTO;
 import com.backendSmaileasy.ParkinlogicBackend.entity.PoliticasEntity;
 import com.backendSmaileasy.ParkinlogicBackend.repository.PoliticasRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,5 +28,13 @@ public class PoliticasService {
 
     public void deletePoliticas(Long id) {
         politicasRepository.deleteById(id);
+    }
+    public PoliticasService(PoliticasRepository politicasRepository) {
+        this.politicasRepository = politicasRepository;
+    }
+
+    public List<PoliticasDTO> getPoliciesByFacilityId(Long id) {
+        List<PoliticasEntity> politicas = politicasRepository.findByFacilityId(id);
+        return politicas.stream().map(politica -> new PoliticasDTO(politica.getId(), politica.getLabel(), politica.isRequerida())).toList();
     }
 }
