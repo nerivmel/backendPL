@@ -24,8 +24,8 @@ public class ImageController {
     public ImageController(ImageService imageService) {
         this.imageService = imageService;
     }
-        @Autowired
-        private ImageRepository imagenRepository;
+    @Autowired
+    private ImageRepository imagenRepository;
     @CrossOrigin(origins = "http://localhost:3000")
     @PostMapping("/guardar")
     public ResponseEntity<String> guardarImagen(@RequestParam("nombre") String nombre,
@@ -50,15 +50,15 @@ public class ImageController {
     }
     @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping("/obtener-imagen/{id}")
-        public ResponseEntity<byte[]> obtenerImagen(@PathVariable Long id) {
-            Optional<ImageEntity> imagenOptional = imagenRepository.findById(id);
-            if (imagenOptional.isPresent()) {
-                ImageEntity imagen = imagenOptional.get();
-                return ResponseEntity.ok().contentType(MediaType.IMAGE_JPEG).body(imagen.getDatosImagen());
-            } else {
-                return ResponseEntity.notFound().build();
-            }
+    public ResponseEntity<byte[]> obtenerImagen(@PathVariable Long id) {
+        Optional<ImageEntity> imagenOptional = imagenRepository.findById(id);
+        if (imagenOptional.isPresent()) {
+            ImageEntity imagen = imagenOptional.get();
+            return ResponseEntity.ok().contentType(MediaType.IMAGE_JPEG).body(imagen.getDatosImagen());
+        } else {
+            return ResponseEntity.notFound().build();
         }
+    }
 
     @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping("/getfacility/{facility}")
@@ -80,5 +80,3 @@ public class ImageController {
 
 
 }
-
-

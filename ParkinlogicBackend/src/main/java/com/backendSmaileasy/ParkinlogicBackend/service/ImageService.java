@@ -19,7 +19,6 @@ public class ImageService {
     }
 
     public ImageEntity guardarImagen(ImageEntity imageEntity) {
-        // Lógica para guardar la imagen en la base de datos
         return imageRepository.save(imageEntity);
     }
     @Transactional(readOnly = true)
@@ -27,7 +26,6 @@ public class ImageService {
         Optional<ImageEntity> optionalImageEntity = imageRepository.findByFacility(facility);
         if (optionalImageEntity.isPresent()) {
             ImageEntity imageEntity = optionalImageEntity.get();
-            // Accede explícitamente a los datos LOB dentro del contexto de la transacción
             imageEntity.getDatosImagen();
             return imageEntity;
         } else {

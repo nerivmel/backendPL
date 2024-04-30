@@ -11,7 +11,7 @@ public class ImageEntity {
     private Long id;
 
     @Lob
-    @Column(columnDefinition = "xml")
+    @Column(columnDefinition = "oid")
     private byte[] datosImagen;
 
     @Column

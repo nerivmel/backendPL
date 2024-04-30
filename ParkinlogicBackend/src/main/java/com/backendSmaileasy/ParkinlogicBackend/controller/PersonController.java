@@ -29,9 +29,7 @@ public class PersonController {
         if (person != null) {
             System.out.println("exito" + person);
             return new ResponseEntity<>(person, HttpStatus.OK);
-
         } else {
-
             String errorMessage = "No se encontraron registros con doc: " + doc + " y doctype: " + doctype;
             System.out.println("ERROR Numero de doc: "+doc+ ", Tipo de documento "+doctype);
             return new ResponseEntity(errorMessage, HttpStatus.NOT_FOUND);
