@@ -14,6 +14,5 @@ public class FacilityEntity {
     private String nombre;
 
     private String ubicacion;
-
 }
 

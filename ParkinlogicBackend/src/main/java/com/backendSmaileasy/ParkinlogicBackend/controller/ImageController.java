@@ -38,8 +38,7 @@ public class ImageController {
             ImageEntity imagen = new ImageEntity();
             imagen.setNombre(nombre);
             imagen.setFacility(facility);
-            imagen.setDatosImagen(datosImagen.getBytes()); // Convierte el MultipartFile a arreglo de bytes
-
+            imagen.setDatosImagen(datosImagen.getBytes());
             imagenRepository.save(imagen);
 
             return ResponseEntity.ok("Imagen guardada correctamente");
