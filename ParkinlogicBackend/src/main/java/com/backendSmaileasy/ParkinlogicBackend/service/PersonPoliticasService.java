@@ -47,7 +47,6 @@ public class PersonPoliticasService {
 
             personPoliticasRepository.save(personPoliticasEntity);
         } else {
-            // Aquí puedes manejar la situación donde uno o ambos IDs no existen en la base de datos
             throw new RuntimeException("No se encontró una persona o política con el ID proporcionado.");
         }
     }

@@ -18,8 +18,8 @@ public class PersonController {
     public PersonController(PersonService personService) {
         this.personService = personService;
     }
-    @CrossOrigin(origins = "http://localhost:3000")
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping("/persons")
     public ResponseEntity<PersonEntity> getPersonByDocAndDoc_type(
             @RequestParam String doc,

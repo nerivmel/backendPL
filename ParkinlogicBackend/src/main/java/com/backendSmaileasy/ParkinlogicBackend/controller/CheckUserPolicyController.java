@@ -5,6 +5,7 @@ import com.backendSmaileasy.ParkinlogicBackend.service.PersonPoliticasService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,7 +19,7 @@ public class CheckUserPolicyController {
     public CheckUserPolicyController(PersonPoliticasService personPoliticasService) {
         this.personPoliticasService = personPoliticasService;
     }
-
+    @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping("/checkpolicy/{userId}/{facilityId}")
     public ResponseEntity<Boolean> checkUserPolicy(@PathVariable("userId") Integer userId,
                                                    @PathVariable("facilityId") Integer facilityId) {
